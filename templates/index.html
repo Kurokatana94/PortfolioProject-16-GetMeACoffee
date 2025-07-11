@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="text-center mb-3">
+            <h1>Get me a coffee</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center mt-5 mb-5">
+            <p>Did you find my projects interesting?</p>
+            <p>Would you like to help keeping it online?</p>
+            <p>Support me with a coffee to fight against drowsiness and deliver more!</p>
+            <img src="static/images/Cup Of Coffee Sticker.gif">
+        </div>
+        <div class="text-center mt-5">
+            <form id="donation-form">
+                <label for="amount">Enter amount:</label>
+                <div class="input-group input-group-sm mt-2" style="max-width: 150px; margin: 0 auto;">
+                    <span class="input-group-text">£</span>
+                    <input
+                        type="number"
+                        id="amount"
+                        name="amount"
+                        class="form-control"
+                        min="0.50"
+                        step="0.10"
+                        value="1.00"
+                        required
+                    />
+                </div>
+                <br><br>
+                <button type="submit" class="btn btn-primary">Donate</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const STRIPE_PK = "{{ stripe_pk }}";
+</script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="{{ url_for('static', filename='static/js/script.js') }}"></script>
+{% endblock %}
