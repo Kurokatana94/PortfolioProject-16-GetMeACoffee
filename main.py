@@ -34,7 +34,7 @@ def create_checkout_session():
                     'currency': 'gbp',
                     'unit_amount': amount,
                     'product_data': {
-                        'name': 'Get me a coffee ☕',
+                        'name': 'Gift me a coffee ☕',
                     },
                 },
                 'quantity': 1,
